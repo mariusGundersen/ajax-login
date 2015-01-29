@@ -28,7 +28,7 @@ document.body.addEventListener('submit', function ajax(e){
   e.preventDefault();
   setTimeout(function(){
     if(e.target.hasAttribute('data-push-state')){
-      history.pushState('title', {success:true}, "/loggedIn");
+      history.pushState('title', {success:true}, "/success.html");
     }else{
       e.target.submit();
     }

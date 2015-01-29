@@ -1,4 +1,125 @@
 <!doctype html>
 
-<a href="/static.html">static tests</a><br>
-<a href="/dynamic.html">dynamic tests</a>
+<title>Ajax login form tests</title>
+
+<style>
+body{
+  font-family: sans-serif;
+}
+table td{
+  background-color: #eee;
+  padding: 0.25em 0.5em;
+}
+table td.test{
+  background-color: #ccc;
+}
+
+table .no,
+table .yes{
+  text-align: center;
+  color: white;
+}
+table .no{
+  background-color: #E11;
+}
+table .yes{
+  background-color: #44AB44;
+}
+</style>
+
+<h1>Ajax login form tests</h1>
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Chrome 40</th>
+    <th>Chrome 42 with flag</th>
+    <th>IE 11</th>
+    <th>Firefox 35</th>
+    <th>Firefox 37</th>
+  </tr>
+  <tr>
+    <td rowspan=5>static</td>
+    <td class="test">prefill on load</td>
+    <td class="yes">Yes</td>
+    <td class="yes">Yes</td>
+    <td class="no">No</td>
+    <td class="no">No</td>
+    <td class="yes">Yes</td>
+  </tr>
+  <tr>
+    <td class="test">popup on reload</td>
+    <td class="no">No</td>
+    <td class="no">No</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on redirect</td>
+    <td class="yes">On redirect</td>
+    <td class="yes">On redirect</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on reload with query param</td>
+    <td class="no">No</td>
+    <td class="no">No</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on pushState</td>
+    <td class="no">No</td>
+    <td class="yes">On pushState</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td rowspan=5>dynamic</td>
+    <td class="test">prefill on generate</td>
+    <td class="yes">Yes</td>
+    <td class="yes">Yes</td>
+    <td class="no">No</td>
+    <td class="no">No</td>
+    <td class="yes">Yes</td>
+  </tr>
+  <tr>
+    <td class="test">popup on reload</td>
+    <td class="yes">On reload</td>
+    <td class="yes">On reload</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on redirect</td>
+    <td class="yes">On redirect</td>
+    <td class="yes">On redirect</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on reload query param</td>
+    <td class="yes">On reload</td>
+    <td class="yes">On reload</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on pushState</td>
+    <td class="no">No</td>
+    <td class="yes">On pushState</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+</table>
+<hr>
+<a href="/static.html">static tests</a> | <a href="/dynamic.html">dynamic tests</a>
