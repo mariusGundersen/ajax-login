@@ -39,7 +39,7 @@ table .yes{
     <th>Firefox 37</th>
   </tr>
   <tr>
-    <td rowspan=5>static</td>
+    <td rowspan=6>static</td>
     <td class="test">prefill on load</td>
     <td class="yes">Yes</td>
     <td class="yes">Yes</td>
@@ -67,6 +67,14 @@ table .yes{
     <td class="test">popup on reload with query param</td>
     <td class="no">No</td>
     <td class="no">No</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+    <td class="yes">On submit</td>
+  </tr>
+  <tr>
+    <td class="test">popup on redirect to hidden form</td>
+    <td class="yes">On redirect</td>
+    <td class="yes">On redirect</td>
     <td class="yes">On submit</td>
     <td class="yes">On submit</td>
     <td class="yes">On submit</td>
@@ -121,5 +129,9 @@ table .yes{
     <td class="yes">On submit</td>
   </tr>
 </table>
+<ul>
+  <li>Chrome only shows the popup if it is redirected to a page without a login form. It tries to guess when the user has successfully entered the correct password
+  <li>IE11 remembers both the username and the password but does not prefill the login form with them
+</ul>
 <hr>
 <a href="/static.html">static tests</a> | <a href="/dynamic.html">dynamic tests</a>

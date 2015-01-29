@@ -18,6 +18,12 @@
   <input type="password" name="password">
   <button type="submit">login</button> go back to this page with query param
 </form>
+<form class="login" method="post" action="login">
+  <input type="hidden" name="redirectTo" value="/hidden.html">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <button type="submit">login</button> redirect to a page with a hidden form
+</form>
 <form class="login" method="post" action="login" data-push-state>
   <input type="text" name="username">
   <input type="password" name="password">
