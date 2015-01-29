@@ -15,7 +15,8 @@ table td.test{
 }
 
 table .no,
-table .yes{
+table .yes,
+table .almost{
   text-align: center;
   color: white;
 }
@@ -24,6 +25,9 @@ table .no{
 }
 table .yes{
   background-color: #44AB44;
+}
+table .almost{
+  background-color: #ACC20A;
 }
 </style>
 
@@ -44,7 +48,7 @@ table .yes{
     <td class="yes">Yes</td>
     <td class="yes">Yes</td>
     <td class="no">No</td>
-    <td class="no">No</td>
+    <td class="almost">Only one</td>
     <td class="yes">Yes</td>
   </tr>
   <tr>
@@ -93,7 +97,7 @@ table .yes{
     <td class="yes">Yes</td>
     <td class="yes">Yes</td>
     <td class="no">No</td>
-    <td class="no">No</td>
+    <td class="almost">Only one</td>
     <td class="yes">Yes</td>
   </tr>
   <tr>
@@ -133,6 +137,7 @@ table .yes{
   <li>Chrome only shows the popup if it is redirected to a page without a login form. It tries to guess when the user has successfully entered the correct password
   <li>For Chrome 41+ to work with pushState the "Enable showing of password prompt on in-page navigations" flag needs to be enabled in chrome://flags (and the browser must be restarted)
   <li>IE11 remembers both the username and the password but does not prefill the login form with them
+  <li>Firefox 35 will only prefill the username and password if only one username and password has been stored for the current site
 </ul>
 <hr>
 <a href="/static.html">static tests</a> | <a href="/dynamic.html">dynamic tests</a>
