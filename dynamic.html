@@ -1,0 +1,42 @@
+<!doctype html>
+
+<button onclick="addGeneratedForms()">addGeneratedForms</button>
+<script>
+function addGeneratedForms(){
+  var div = document.createElement('div');
+  div.innerHTML = '<form class="login" method="post" action="login">\
+    <input type="hidden" name="redirectTo" value="/dynamic.html">\
+    <input type="text" name="username">\
+    <input type="password" name="password">\
+    <button type="submit">login</button> go back to this page\
+  </form>\
+  <form class="login" method="post" action="login">\
+    <input type="hidden" name="redirectTo" value="/success.html">\
+    <input type="text" name="username">\
+    <input type="password" name="password">\
+    <button type="submit">login</button> go to success page\
+  </form>\
+  <form class="login" method="post" action="login">\
+    <input type="hidden" name="redirectTo" value="/dynamic.html?success=true">\
+    <input type="text" name="username">\
+    <input type="password" name="password">\
+    <button type="submit">login</button> go back to this page with query param\
+  </form>\
+  <form class="login" method="post" action="login" data-push-state>\
+    <input type="text" name="username">\
+    <input type="password" name="password">\
+    <button type="submit">login</button> stay on this page but update the url with pushState\
+  </form>';
+  document.body.appendChild(div);
+}
+document.body.addEventListener('submit', function ajax(e){
+  e.preventDefault();
+  setTimeout(function(){
+    if(e.target.hasAttribute('data-push-state')){
+      history.pushState('title', {success:true}, "/loggedIn");
+    }else{
+      e.target.submit();
+    }
+  }, 1000);
+}, false);
+</script>
